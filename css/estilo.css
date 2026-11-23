@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 10px;
+  color: #333;
+}
+
+h1 {
+  color: #1a5276;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 14px;
+}
+
+dialog {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px;
+  min-width: 320px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.botoes {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+#erro {
+  color: #c0392b;
+  margin: 0;
+}
+
+#cancelar {
+  background: #7f8c8d;
+}
+
+input, select, button {
+  padding: 6px;
+}
+
+button {
+  background: #1a5276;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#novo {
+  margin: 10px 0;
+}
+
+td button {
+  margin-right: 4px;
+}
+
+td:last-child {
+  white-space: nowrap;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: left;
+}
+
+th {
+  background: #eaf2f8;
+}
+
+#mensagem {
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.menu a {
+  flex: 1;
+  min-width: 150px;
+  background: #1a5276;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.menu a:hover {
+  background: #2471a3;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Destinos</title>
+  <link rel="stylesheet" href="/css/estilo.css">
+</head>
+
+<body>
+  <p><a href="index.html">Início</a></p>
+  <h1>Destinos</h1>
+
+  <button type="button" id="novo">Novo destino</button>
+  <p id="mensagem"></p>
+
+  <dialog id="modal">
+    <h2 id="modal-titulo"></h2>
+    <form id="form">
+      <input type="hidden" id="id">
+      <label>Viagem
+        <select id="viagem_id"></select>
+      </label>
+      <label>Cidade
+        <input type="text" id="cidade">
+      </label>
+      <label>País
+        <input type="text" id="pais">
+      </label>
+      <label>Data de chegada
+        <input type="date" id="data_chegada">
+      </label>
+      <label>Data de saída
+        <input type="date" id="data_saida">
+      </label>
+      <p id="erro"></p>
+      <div class="botoes">
+        <button type="submit">Salvar</button>
+        <button type="button" id="cancelar">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Viagem</th>
+        <th>Cidade</th>
+        <th>País</th>
+        <th>Chegada</th>
+        <th>Saída</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="tabela"></tbody>
+  </table>
+
+  <script src="/scripts/destino.js"></script>
+</body>
+
+</html>

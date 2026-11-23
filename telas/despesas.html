@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Despesas</title>
+  <link rel="stylesheet" href="/css/estilo.css">
+</head>
+
+<body>
+  <p><a href="index.html">Início</a></p>
+  <h1>Despesas</h1>
+
+  <button type="button" id="novo">Nova despesa</button>
+  <p id="mensagem"></p>
+
+  <dialog id="modal">
+    <h2 id="modal-titulo"></h2>
+    <form id="form">
+      <input type="hidden" id="id">
+      <label>Viagem
+        <select id="viagem_id"></select>
+      </label>
+      <label>Descrição
+        <input type="text" id="descricao">
+      </label>
+      <label>Valor (R$)
+        <input type="number" step="0.01" min="0" id="valor">
+      </label>
+      <label>Data
+        <input type="date" id="data">
+      </label>
+      <label>Categoria
+        <select id="categoria">
+          <option value="transporte">Transporte</option>
+          <option value="hospedagem">Hospedagem</option>
+          <option value="alimentacao">Alimentação</option>
+          <option value="lazer">Lazer</option>
+          <option value="outros">Outros</option>
+        </select>
+      </label>
+      <p id="erro"></p>
+      <div class="botoes">
+        <button type="submit">Salvar</button>
+        <button type="button" id="cancelar">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Viagem</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Categoria</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="tabela"></tbody>
+  </table>
+
+  <script src="/scripts/despesa.js"></script>
+</body>
+
+</html>
