@@ -1,0 +1,1881 @@
+{
+  "info": {
+    "_postman_id": "4b3cb36b-8d5b-427f-8d8a-247c5f7b5c69",
+    "name": "De Mala Pronta",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26656063"
+  },
+  "item": [
+    {
+      "name": "Viagens",
+      "item": [
+        {
+          "name": "Listar viagens",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/viagens",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Listar viagens",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/viagens",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:42:26 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "397"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"titulo\": \"Praia em Maceió\",\n    \"data_inicio\": \"2026-12-01\",\n    \"data_fim\": \"2026-12-10\",\n    \"orcamento\": 3500,\n    \"status\": \"planejada\"\n  },\n  {\n    \"id\": 2,\n    \"titulo\": \"Mochilão pela Europa\",\n    \"data_inicio\": \"2026-07-01\",\n    \"data_fim\": \"2026-07-21\",\n    \"orcamento\": 15000,\n    \"status\": \"planejada\"\n  },\n  {\n    \"id\": 3,\n    \"titulo\": \"Fim de semana em Gramado\",\n    \"data_inicio\": \"2026-11-20\",\n    \"data_fim\": \"2026-11-24\",\n    \"orcamento\": 2500,\n    \"status\": \"em andamento\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Buscar viagem por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/viagens/1",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Buscar viagem por ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/viagens/1",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:42:38 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "126"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"titulo\": \"Praia em Maceió\",\n  \"data_inicio\": \"2026-12-01\",\n  \"data_fim\": \"2026-12-10\",\n  \"orcamento\": 3500,\n  \"status\": \"planejada\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Total despesa por viagem",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/viagens/1/total-despesas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens",
+                "1",
+                "total-despesas"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Total despesa por viagem",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/viagens/1/total-despesas",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens",
+                    "1",
+                    "total-despesas"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:42:44 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "30"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"viagem_id\": 1,\n  \"total\": 340.5\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar viagem",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"titulo\":\"Teste 4\",\n    \"data_inicio\":\"2026-03-01\",\n    \"data_fim\":\"2026-03-10\",\n    \"orcamento\":2050,\n    \"status\":\"planejada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/viagens",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar viagem",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"titulo\":\"Teste 2\",\n    \"data_inicio\":\"2026-03-01\",\n    \"data_fim\":\"2026-03-10\",\n    \"orcamento\":2050,\n    \"status\":\"planejada\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/viagens",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:42:52 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "117"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 5,\n  \"titulo\": \"Teste 2\",\n  \"data_inicio\": \"2026-03-01\",\n  \"data_fim\": \"2026-03-10\",\n  \"orcamento\": 2050,\n  \"status\": \"planejada\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Atualizar viagem",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\n    \"titulo\":\"Praia em Maceió\",\n    \"data_inicio\":\"2026-12-01\",\n    \"data_fim\":\"2026-12-10\",\n    \"orcamento\":3500,\n    \"status\":\"planejada\"\n}       ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/viagens/1",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Atualizar viagem",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": " {\n    \"titulo\":\"Praia em Maceió\",\n    \"data_inicio\":\"2026-12-01\",\n    \"data_fim\":\"2026-12-10\",\n    \"orcamento\":3500,\n    \"status\":\"planejada\"\n}       ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/viagens/1",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:42:58 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "126"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"titulo\": \"Praia em Maceió\",\n  \"data_inicio\": \"2026-12-01\",\n  \"data_fim\": \"2026-12-10\",\n  \"orcamento\": 3500,\n  \"status\": \"planejada\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Excluir viagem",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/viagens/5",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens",
+                "5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Excluir viagem",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/viagens/5",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens",
+                    "5"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:43:26 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Destinos",
+      "item": [
+        {
+          "name": "Listar destinos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/destinos",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "destinos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Listar destinos",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/destinos",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "destinos"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:44:06 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "560"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 2,\n    \"viagem_id\": 2,\n    \"cidade\": \"Lisboa\",\n    \"pais\": \"Portugal\",\n    \"data_chegada\": \"2026-07-01\",\n    \"data_saida\": \"2026-07-07\"\n  },\n  {\n    \"id\": 3,\n    \"viagem_id\": 2,\n    \"cidade\": \"Paris\",\n    \"pais\": \"França\",\n    \"data_chegada\": \"2026-07-07\",\n    \"data_saida\": \"2026-07-14\"\n  },\n  {\n    \"id\": 4,\n    \"viagem_id\": 2,\n    \"cidade\": \"Roma\",\n    \"pais\": \"Itália\",\n    \"data_chegada\": \"2026-07-14\",\n    \"data_saida\": \"2026-07-21\"\n  },\n  {\n    \"id\": 5,\n    \"viagem_id\": 3,\n    \"cidade\": \"Gramado\",\n    \"pais\": \"Brasil\",\n    \"data_chegada\": \"2026-11-20\",\n    \"data_saida\": \"2026-11-24\"\n  },\n  {\n    \"id\": 6,\n    \"viagem_id\": 1,\n    \"cidade\": \"Búzios\",\n    \"pais\": \"Brasil\",\n    \"data_chegada\": \"2026-01-12\",\n    \"data_saida\": \"2026-01-14\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Listar destinos por viagem",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/destinos?viagem_id=2",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "destinos"
+              ],
+              "query": [
+                {
+                  "key": "viagem_id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Listar destinos por viagem",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/destinos?viagem_id=2",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "destinos"
+                  ],
+                  "query": [
+                    {
+                      "key": "viagem_id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:44:09 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "336"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 2,\n    \"viagem_id\": 2,\n    \"cidade\": \"Lisboa\",\n    \"pais\": \"Portugal\",\n    \"data_chegada\": \"2026-07-01\",\n    \"data_saida\": \"2026-07-07\"\n  },\n  {\n    \"id\": 3,\n    \"viagem_id\": 2,\n    \"cidade\": \"Paris\",\n    \"pais\": \"França\",\n    \"data_chegada\": \"2026-07-07\",\n    \"data_saida\": \"2026-07-14\"\n  },\n  {\n    \"id\": 4,\n    \"viagem_id\": 2,\n    \"cidade\": \"Roma\",\n    \"pais\": \"Itália\",\n    \"data_chegada\": \"2026-07-14\",\n    \"data_saida\": \"2026-07-21\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Buscar destino por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/destinos/2",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "destinos",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Buscar destino por ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/destinos/2",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "destinos",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:44:17 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "113"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 2,\n  \"viagem_id\": 2,\n  \"cidade\": \"Lisboa\",\n  \"pais\": \"Portugal\",\n  \"data_chegada\": \"2026-07-01\",\n  \"data_saida\": \"2026-07-07\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar destino",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viagem_id\":1,\n    \"cidade\":\"Búzios\",\n    \"pais\":\"Brasil\",\n    \"data_chegada\":\"2026-01-12\",\n    \"data_saida\":\"2026-01-14\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/destinos",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "destinos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar destino",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"viagem_id\":1,\n    \"cidade\":\"Búzios\",\n    \"pais\":\"Brasil\",\n    \"data_chegada\":\"2026-01-12\",\n    \"data_saida\":\"2026-01-14\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/destinos",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "destinos"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:45:00 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "112"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 7,\n  \"viagem_id\": 1,\n  \"cidade\": \"Búzios\",\n  \"pais\": \"Brasil\",\n  \"data_chegada\": \"2026-01-12\",\n  \"data_saida\": \"2026-01-14\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Atualizar destino",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viagem_id\":1,\n    \"cidade\":\"Búzios\",\n    \"pais\":\"Brasil\",\n    \"data_chegada\":\"2026-01-12\",\n    \"data_saida\":\"2026-01-19\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/destinos/2",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "destinos",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Atualizar destino",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"viagem_id\":1,\n    \"cidade\":\"Búzios\",\n    \"pais\":\"Brasil\",\n    \"data_chegada\":\"2026-01-12\",\n    \"data_saida\":\"2026-01-19\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/destinos/2",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "destinos",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:44:41 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "112"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 2,\n  \"viagem_id\": 1,\n  \"cidade\": \"Búzios\",\n  \"pais\": \"Brasil\",\n  \"data_chegada\": \"2026-01-12\",\n  \"data_saida\": \"2026-01-19\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Excluir destino",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/destinos/7",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "destinos",
+                "7"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Excluir destino",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/destinos/7",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "destinos",
+                    "7"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:45:18 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Despesas",
+      "item": [
+        {
+          "name": "Listar despesas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/despesas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Listar despesas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/despesas",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:46:17 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "770"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 3,\n    \"viagem_id\": 1,\n    \"descricao\": \"Jantar na Lapa\",\n    \"valor\": 220.5,\n    \"data\": \"2026-01-15\",\n    \"categoria\": \"alimentacao\"\n  },\n  {\n    \"id\": 4,\n    \"viagem_id\": 1,\n    \"descricao\": \"Passeio Cristo Redentor\",\n    \"valor\": 120,\n    \"data\": \"2026-01-16\",\n    \"categoria\": \"lazer\"\n  },\n  {\n    \"id\": 5,\n    \"viagem_id\": 2,\n    \"descricao\": \"Passagem aérea ida e volta\",\n    \"valor\": 5200,\n    \"data\": \"2026-07-01\",\n    \"categoria\": \"transporte\"\n  },\n  {\n    \"id\": 6,\n    \"viagem_id\": 2,\n    \"descricao\": \"Hostel em Lisboa\",\n    \"valor\": 950,\n    \"data\": \"2026-07-02\",\n    \"categoria\": \"hospedagem\"\n  },\n  {\n    \"id\": 7,\n    \"viagem_id\": 2,\n    \"descricao\": \"Museu do Louvre\",\n    \"valor\": 180,\n    \"data\": \"2026-07-09\",\n    \"categoria\": \"lazer\"\n  },\n  {\n    \"id\": 8,\n    \"viagem_id\": 3,\n    \"descricao\": \"Chalé\",\n    \"valor\": 1400,\n    \"data\": \"2026-11-20\",\n    \"categoria\": \"hospedagem\"\n  },\n  {\n    \"id\": 9,\n    \"viagem_id\": 3,\n    \"descricao\": \"Fondue\",\n    \"valor\": 310,\n    \"data\": \"2026-11-21\",\n    \"categoria\": \"alimentacao\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Listar despesas por viagem",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/despesas?viagem_id=1",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas"
+              ],
+              "query": [
+                {
+                  "key": "viagem_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Listar despesas por viagem",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/despesas?viagem_id=1",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas"
+                  ],
+                  "query": [
+                    {
+                      "key": "viagem_id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:46:22 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "227"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 3,\n    \"viagem_id\": 1,\n    \"descricao\": \"Jantar na Lapa\",\n    \"valor\": 220.5,\n    \"data\": \"2026-01-15\",\n    \"categoria\": \"alimentacao\"\n  },\n  {\n    \"id\": 4,\n    \"viagem_id\": 1,\n    \"descricao\": \"Passeio Cristo Redentor\",\n    \"valor\": 120,\n    \"data\": \"2026-01-16\",\n    \"categoria\": \"lazer\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Buscar despesa por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/despesas/3",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas",
+                "3"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Buscar despesa por ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/despesas/3",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas",
+                    "3"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:46:32 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "112"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 3,\n  \"viagem_id\": 1,\n  \"descricao\": \"Jantar na Lapa\",\n  \"valor\": 220.5,\n  \"data\": \"2026-01-15\",\n  \"categoria\": \"alimentacao\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar despesa",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\n    \"viagem_id\":1,\n    \"descricao\":\"Táxi\",\n    \"valor\":45.9,\n    \"data\":\"2026-12-05\",\n    \"categoria\":\"transporte\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/despesas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar despesa",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": " {\n    \"viagem_id\":1,\n    \"descricao\":\"Táxi\",\n    \"valor\":45.9,\n    \"data\":\"2026-12-05\",\n    \"categoria\":\"transporte\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/despesas",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:46:39 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "102"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 11,\n  \"viagem_id\": 1,\n  \"descricao\": \"Táxi\",\n  \"valor\": 45.9,\n  \"data\": \"2026-12-05\",\n  \"categoria\": \"transporte\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Atualizar despesa",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\n    \"viagem_id\":1,\n    \"descricao\":\"Táxi\",\n    \"valor\":45,\n    \"data\":\"2026-12-02\",\n    \"categoria\":\"transporte\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/despesas/4",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas",
+                "4"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Atualizar despesa",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": " {\n    \"viagem_id\":1,\n    \"descricao\":\"Táxi\",\n    \"valor\":45,\n    \"data\":\"2026-12-02\",\n    \"categoria\":\"transporte\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/despesas/4",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas",
+                    "4"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:46:49 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "99"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 4,\n  \"viagem_id\": 1,\n  \"descricao\": \"Táxi\",\n  \"valor\": 45,\n  \"data\": \"2026-12-02\",\n  \"categoria\": \"transporte\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Excluir despesa",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/despesas/8",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas",
+                "8"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Excluir despesa",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/despesas/8",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas",
+                    "8"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 19:47:09 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Erros",
+      "item": [
+        {
+          "name": "Cadastrar viagem com título vazio",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"titulo\": \"\",\n    \"data_inicio\": \"2026-01-01\",\n    \"data_fim\": \"2026-01-05\",\n    \"orcamento\": 100,\n    \"status\": \"planejada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/viagens",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar viagem com título vazio",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"titulo\": \"\",\n    \"data_inicio\": \"2026-01-01\",\n    \"data_fim\": \"2026-01-05\",\n    \"orcamento\": 100,\n    \"status\": \"planejada\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/viagens",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:29:18 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "64"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"dados inválidos: todos os campos são obrigatórios\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar viagem com data fim anterior ao início",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"titulo\": \"X\",\n    \"data_inicio\": \"2026-01-10\",\n    \"data_fim\": \"2026-01-01\",\n    \"orcamento\": 100,\n    \"status\": \"planejada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/viagens",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar viagem com data fim anterior ao início",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"titulo\": \"X\",\n    \"data_inicio\": \"2026-01-10\",\n    \"data_fim\": \"2026-01-01\",\n    \"orcamento\": 100,\n    \"status\": \"planejada\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/viagens",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:29:32 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "75"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"dados inválidos: data_fim não pode ser anterior a data_inicio\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar viagem com orçamento negativo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"titulo\": \"X\",\n    \"data_inicio\": \"2026-01-01\",\n    \"data_fim\": \"2026-01-05\",\n    \"orcamento\": -10,\n    \"status\": \"planejada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/viagens",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar viagem com orçamento negativo",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"titulo\": \"X\",\n    \"data_inicio\": \"2026-01-01\",\n    \"data_fim\": \"2026-01-05\",\n    \"orcamento\": -10,\n    \"status\": \"planejada\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/viagens",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:29:38 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "62"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"dados inválidos: orcamento não pode ser negativo\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Buscar viagem inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/viagens/999",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens",
+                "999"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Buscar viagem inexistente",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/viagens/999",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens",
+                    "999"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:29:51 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "36"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"registro não encontrado\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar destino com chegada após a saída",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viagem_id\": 1,\n    \"cidade\": \"X\",\n    \"pais\": \"Y\",\n    \"data_chegada\": \"2026-01-15\",\n    \"data_saida\": \"2026-01-12\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/destinos",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "destinos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar destino com chegada após a saída",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"viagem_id\": 1,\n    \"cidade\": \"X\",\n    \"pais\": \"Y\",\n    \"data_chegada\": \"2026-01-15\",\n    \"data_saida\": \"2026-01-12\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/destinos",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "destinos"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:29:56 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "79"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"dados inválidos: data_chegada não pode ser posterior a data_saida\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar destino com viagem inexistente",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viagem_id\": 999,\n    \"cidade\": \"X\",\n    \"pais\": \"Y\",\n    \"data_chegada\": \"2026-01-10\",\n    \"data_saida\": \"2026-01-12\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/destinos",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "destinos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar destino com viagem inexistente",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"viagem_id\": 999,\n    \"cidade\": \"X\",\n    \"pais\": \"Y\",\n    \"data_chegada\": \"2026-01-10\",\n    \"data_saida\": \"2026-01-12\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/destinos",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "destinos"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:30:02 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "70"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"conflito de relacionamento: a viagem informada não existe\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar despesa com valor zero",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viagem_id\": 1,\n    \"descricao\": \"X\",\n    \"valor\": 0,\n    \"data\": \"2026-01-12\",\n    \"categoria\": \"lazer\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/despesas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar despesa com valor zero",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"viagem_id\": 1,\n    \"descricao\": \"X\",\n    \"valor\": 0,\n    \"data\": \"2026-01-12\",\n    \"categoria\": \"lazer\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/despesas",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:30:06 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "59"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"dados inválidos: valor deve ser maior que zero\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar despesa fora do período da viagem",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viagem_id\": 1,\n    \"descricao\": \"X\",\n    \"valor\": 50,\n    \"data\": \"2027-05-01\",\n    \"categoria\": \"lazer\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/despesas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar despesa fora do período da viagem",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"viagem_id\": 1,\n    \"descricao\": \"X\",\n    \"valor\": 50,\n    \"data\": \"2027-05-01\",\n    \"categoria\": \"lazer\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/despesas",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:30:11 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "85"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"dados inválidos: data da despesa deve estar dentro do período da viagem\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Cadastrar despesa com viagem inexistente",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"viagem_id\": 999,\n    \"descricao\": \"X\",\n    \"valor\": 50,\n    \"data\": \"2026-01-12\",\n    \"categoria\": \"lazer\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/despesas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Cadastrar despesa com viagem inexistente",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"viagem_id\": 999,\n    \"descricao\": \"X\",\n    \"valor\": 50,\n    \"data\": \"2026-01-12\",\n    \"categoria\": \"lazer\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/despesas",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:30:16 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "70"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"conflito de relacionamento: a viagem informada não existe\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Buscar despesa inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base}}/despesas/999",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "despesas",
+                "999"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Buscar despesa inexistente",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base}}/despesas/999",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "despesas",
+                    "999"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:30:22 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "36"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"registro não encontrado\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Excluir viagem com destinos e despesas",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base}}/viagens/1",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "viagens",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Excluir viagem com destinos e despesas",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base}}/viagens/1",
+                  "host": [
+                    "{{base}}"
+                  ],
+                  "path": [
+                    "viagens",
+                    "1"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 23 Nov 2026 21:30:29 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "38"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"erro\": \"conflito de relacionamento\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base",
+      "value": ""
+    }
+  ]
+}
